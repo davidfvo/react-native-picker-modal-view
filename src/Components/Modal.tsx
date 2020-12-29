@@ -19,7 +19,7 @@ export class ModalComponent extends React.PureComponent<IModalProps, IModalState
 		selectedObject: {} as IModalListInDto,
 	};
 
-	public static defaultProps = { showToTopButton: true, modalAnimationType: 'slide', showAlphabeticalIndex: false, searchInputTextColor: '#252525', autoGenerateAlphabeticalIndex: false, sortingLanguage: 'tr', removeClippedSubviews: false, selectPlaceholderText: 'Choose one...', searchPlaceholderText: 'Search...', autoSort: false, items: [], disabled: false, requireSelection: false, searchLengthTrigger: 0 };
+	public static defaultProps = { showToTopButton: true, modalAnimationType: 'slide', showAlphabeticalIndex: false, searchInputTextColor: '#252525', autoGenerateAlphabeticalIndex: false, sortingLanguage: 'tr', removeClippedSubviews: false, selectPlaceholderText: 'Choose one...', searchPlaceholderText: 'Search...', autoSort: false, items: [], disabled: false, requireSelection: false };
 	private viewabilityConfig: { minimumViewTime: number; waitForInteraction: boolean; viewAreaCoveragePercentThreshold: number; };
 
 	constructor(props: IModalProps) {
@@ -267,8 +267,8 @@ export class ModalComponent extends React.PureComponent<IModalProps, IModalState
 
 	public setText(text: string): void {
 		this._setText(text);
-		const { searchLengthTrigger, searchTrigger } = this.props;
-		if(searchTrigger && text.length >= searchLengthTrigger && {}.toString.call(searchLengthTrigger) === '[object Function]') {
+		const { searchTrigger } = this.props;
+		if(searchTrigger != '' && {}.toString.call(searchTrigger) === '[object Function]') {
 			searchTrigger(text)
 		}
 	}
