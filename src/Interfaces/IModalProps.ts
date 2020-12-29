@@ -16,7 +16,6 @@ type ModalProps = ModalBaseProps | ModalPropsIOS | ModalPropsAndroid;
 type ListType = IModalListInDto[];
 
 export interface IModalProps {
-	searchLengthTrigger?: number;
 	searchTrigger?: (text: string) => void;
 	modalAnimationType?: AnimationTypeEnum;
 	showAlphabeticalIndex: boolean;
