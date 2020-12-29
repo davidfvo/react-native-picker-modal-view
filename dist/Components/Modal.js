@@ -162,8 +162,8 @@ export class ModalComponent extends React.PureComponent {
     }
     setText(text) {
         this._setText(text);
-		const { searchLengthTrigger, searchTrigger } = this.props;
-		if(searchTrigger && text.length >= searchLengthTrigger && {}.toString.call(searchLengthTrigger) === '[object Function]') {
+		const { searchTrigger } = this.props;
+		if(searchTrigger != ''&& {}.toString.call(searchTrigger) === '[object Function]') {
 			searchTrigger(text)
 		}
     }
